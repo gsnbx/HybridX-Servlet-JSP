@@ -1,0 +1,5 @@
+package com.hybridx.controller;
+
+public class RegisterServlet {
+
+}
