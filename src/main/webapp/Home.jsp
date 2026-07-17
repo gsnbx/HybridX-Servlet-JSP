@@ -13,5 +13,16 @@
 		<input type="password" name="password" id="password" placeholder="Password" required>
 		<input type="submit" value="Login">
 	</form>
+	
+	<a href="signup.jsp">Register Athlete</a>
+	
+	<% 
+		String success = (String)request.getAttribute("Success");
+		if(success !=null){
+	%>
+		<p style="color:green">Athlete Created</p>
+	<%
+		}
+	%>
 </body>
 </html>

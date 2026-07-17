@@ -14,7 +14,6 @@ public class AthleteDAO{
 	
 	public Athlete Login(String email, String password) {
 		Athlete athlete = null;
-		
 		try {
 			PreparedStatement ps = connection.prepareStatement("select * from athlete where email=? and Password=?");
 			ps.setString(1, email);
@@ -35,5 +34,19 @@ public class AthleteDAO{
 		
 		
 		return athlete;
+	}
+	
+	public void Signup(String name, String email, String password) {
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement("insert into athlete (name, email, password) values (?, ?, ?)");
+			ps.setString(1, name);
+			ps.setString(2, email);
+			ps.setString(3, password);
+			ps.executeUpdate();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
