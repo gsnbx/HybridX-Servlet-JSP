@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Hybrid-X</title>
 </head>
 <body>
-	
+	<h1>HybridX - Smart Athlete Training System</h1>
+	<form action="login" method="post">
+		<input type="email" name="email" id="email" placeholder="Email" required >
+		<input type="password" name="password" id="password" placeholder="Password" required>
+		<input type="submit" value="Login">
+	</form>
 </body>
 </html>

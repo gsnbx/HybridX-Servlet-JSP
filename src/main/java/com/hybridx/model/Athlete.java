@@ -7,9 +7,21 @@ public class Athlete {
 	private String email;
 	private String password;
 	
-	//Constructrs
+	//----------------------Constructrs
+	public Athlete() {}
 	
-	//getters
+	public Athlete(int id, String name, String email) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+	}
+	public Athlete(String name, String email, String pwd) {
+		this.name = name;
+		this.email = email;
+		this.password = pwd;
+	}
+	
+	//-----------------------getters
 	public int getId() {
 		return this.id;
 	}
@@ -20,7 +32,7 @@ public class Athlete {
 		return this.email;
 	}
 	
-	//setters
+	//-----------------------------setters
 	public void setId(int id) {
 		this.id = id;
 	}
