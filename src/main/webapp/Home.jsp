@@ -15,14 +15,26 @@
 	</form>
 	
 	<a href="signup.jsp">Register Athlete</a>
+	<a href="adminLogin.jsp">Admin Login</a>
+	
+	<%
+		//To print Error message for login
+		String error = (String)request.getAttribute("error");
+		if(error != null){
+	%>
+		<p style="color:red"><%=error %></p>
+	<%} %>
 	
 	<% 
-		String success = (String)request.getAttribute("Success");
+		//To print User created alert message
+		String success = (String)session.getAttribute("Success");
 		if(success !=null){
 	%>
-		<p style="color:green">Athlete Created</p>
+		<p style="color:green"><%=success %></p>
 	<%
+		session.removeAttribute("Success");
 		}
+		
 	%>
 </body>
 </html>

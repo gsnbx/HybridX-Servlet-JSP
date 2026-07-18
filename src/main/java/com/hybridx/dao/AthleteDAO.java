@@ -17,22 +17,19 @@ public class AthleteDAO{
 		try {
 			PreparedStatement ps = connection.prepareStatement("select * from athlete where email=? and Password=?");
 			ps.setString(1, email);
-			ps.setString(2, password);
-			
+			ps.setString(2, password);			
 			ResultSet rs = ps.executeQuery();
+			
 			while(rs.next()) {
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
-				String mail = rs.getString("email");
-				
+				String mail = rs.getString("email");				
 				athlete = new Athlete(id, name, mail);
 			}
 		}
 		catch(Exception exception) {
 			exception.printStackTrace();
-		}
-		
-		
+		}		
 		return athlete;
 	}
 	

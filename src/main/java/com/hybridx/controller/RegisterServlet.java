@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/signup")
 public class RegisterServlet extends HttpServlet {
@@ -21,7 +22,9 @@ public class RegisterServlet extends HttpServlet {
 		
 		try {
 			dao.Signup(name, email, password);
-			response.sendRedirect("Home.jsp?Success=1");
+			HttpSession session = request.getSession();
+			session.setAttribute("Success", "User created");
+			response.sendRedirect("Home.jsp");
 		}
 		catch (IOException e) {
 			e.printStackTrace();

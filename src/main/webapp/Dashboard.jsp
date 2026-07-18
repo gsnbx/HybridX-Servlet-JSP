@@ -17,7 +17,7 @@
 	<%= athlete.getName() %>
 	<%= athlete.getEmail() %>
 	</H2>
-	
+	<a href="tdee.jsp">TDEE Calculator</a>
 	<a href="logout">Logout</a>
 </body>
 </html>
